@@ -6,15 +6,16 @@
     <title>Web to Lead Form</title>
     <link rel="stylesheet" href="miniproj.css" >
     <script src="miniproj.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 <body>
     <h1>Create Lead</h1>
 <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D5j000008cx7z" method="POST" onsubmit="beforeSubmit()">
 
 <input type=hidden name="oid" value="00D5j000008cx7z">
-<input type=hidden name="retURL" value="">
+<input type=hidden name="retURL" value="https://venkyy2.github.io/Venktesh/thanks.html">
 <input type="hidden" name="Lead_Date__c" class="outputdate">
-
+<input type=hidden name='captcha_settings' value='{"keyname":"WebToLead","fallback":"true","orgId":"00D5j000008cx7z","ts":""}'>
 
 <label for="first_name">First Name</label>
 <input  id="first_name" 
@@ -34,6 +35,8 @@ required="true" /> <br>
 
 <label for="Lead_Date__c" > Lead Date </label>
 <input  type="date" required="true" class="inputdate" /><br>
+
+<div class="g-recaptcha" data-sitekey="6Lerg-4sAAAAALyF6dWtS9BIk79bSj1kVXHsEciE" data-callback="captchasuccess"></div><br>
 
 <input type="submit" name="submit" class="submit">
 
